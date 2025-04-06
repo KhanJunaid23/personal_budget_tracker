@@ -1,0 +1,1 @@
+echo "web: gunicorn budget_tracker_backend.wsgi --log-file -" > Procfile
