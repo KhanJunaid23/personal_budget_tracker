@@ -40,9 +40,7 @@ db.sqlite3
 __pycache__/
 
 # dependencies
-/node_modules
-/.pnp
-.pnp.js
+budget_tracker_frontend/node_modules/
 
 # testing
 /coverage

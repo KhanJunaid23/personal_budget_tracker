@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../utils/api';
 
@@ -7,6 +7,13 @@ const Login = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const token = localStorage.getItem('accessToken');
+    if (token) {
+      navigate('/dashboard');
+    }
+  }, [navigate]);
+
   const handleChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
@@ -14,18 +21,18 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-        let cred = {
-          username: credentials.username,
-          password: credentials.password,
-        };
-      const res = await api.post("http://127.0.0.1:8000/api/v1/auth/login/", cred);
-  
+      let cred = {
+        username: credentials.username,
+        password: credentials.password,
+      };
+      const res = await api.post("http://127.0.0.1:8000/api/v1/auth/login/",cred);
       localStorage.setItem("accessToken", res.data.access);
       localStorage.setItem("refreshToken", res.data.refresh);
-  
+
       navigate("/dashboard");
     } catch (err) {
       console.error(err);
+      setError("Invalid credentials");
       alert("Invalid credentials");
     }
   };

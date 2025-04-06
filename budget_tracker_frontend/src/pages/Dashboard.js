@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import DashboardChart from '../components/DashboardChart';
 import api from '../utils/api';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
   const [income, setIncome] = useState(0);
@@ -55,8 +56,35 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <h5 className="mt-5">Income vs Expenses</h5>
-        <DashboardChart income={income} expenses={expenses} />
+        <div className="row mt-4">
+          <div className="col-md-6">
+            <div className="card">
+              <div className="card-header">
+                <h5>Income vs Expenses</h5>
+              </div>
+              <div className="card-body">
+                <DashboardChart income={income} expenses={expenses} />
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="card">
+              <div className="card-header">
+                <h5>Quick Actions</h5>
+              </div>
+              <div className="card-body">
+                <div className="d-grid gap-2">
+                  <Link to="/transactions" className="btn btn-primary">
+                    Add New Transaction
+                  </Link>
+                  <Link to="/budget" className="btn btn-secondary">
+                    Manage Budget
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
