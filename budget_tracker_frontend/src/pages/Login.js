@@ -25,7 +25,7 @@ const Login = () => {
         username: credentials.username,
         password: credentials.password,
       };
-      const res = await api.post("http://127.0.0.1:8000/api/v1/auth/login/",cred);
+      const res = await api.post("/api/v1/auth/login/",cred);
       localStorage.setItem("accessToken", res.data.access);
       localStorage.setItem("refreshToken", res.data.refresh);
 
