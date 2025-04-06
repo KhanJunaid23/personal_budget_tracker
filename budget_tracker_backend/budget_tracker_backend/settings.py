@@ -28,7 +28,10 @@ SECRET_KEY = 'django-insecure-bi7=!y(9!x8@24ul-jh0fbf95l1g#)e8j!e3q$6y#rb9500nj3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [
+    'budgettrackerfrontend.vercel.app',
+    'localhost'
+]
 
 
 # Application definition
@@ -61,7 +64,10 @@ MIDDLEWARE = [
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_HEADERS = ['*']
 CORS_ALLOW_METHODS = ['DELETE', 'GET', 'OPTIONS', 'PATCH', 'POST', 'PUT']
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://budgettrackerfrontend.vercel.app",
+    "http://localhost:3000"
+]
 
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
