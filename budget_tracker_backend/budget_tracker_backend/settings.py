@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-bi7=!y(9!x8@24ul-jh0fbf95l1g#)e8j!e3q$6y#rb9500nj3
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'budgettrackerfrontend.vercel.app',
+    'budget-tracker-backend-yvpi.onrender.com',
     'localhost'
 ]
 
