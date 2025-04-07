@@ -4,7 +4,7 @@ import api from '../utils/api';
 const TransactionForm = ({ onSuccess, transaction = null }) => {
   const [formData, setFormData] = useState({
     amount: transaction?.amount || '',
-    category: transaction?.category?.id || '',
+    category_id: transaction?.category?.id || '',
     detail: transaction?.detail || '',
     date: transaction?.date || new Date().toISOString().split('T')[0],
     type: transaction?.category?.type || 'income'
@@ -41,7 +41,7 @@ const TransactionForm = ({ onSuccess, transaction = null }) => {
     try {
       const data = {
         amount: formData.amount,
-        category: parseInt(formData.category),
+        category_id: parseInt(formData.category),
         detail: formData.detail,
         date: formData.date,
       };
