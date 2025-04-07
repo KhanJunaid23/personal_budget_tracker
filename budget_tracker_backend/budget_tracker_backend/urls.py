@@ -24,8 +24,8 @@ schema_view = get_schema_view(
     openapi.Info(
         title="Personal Budget Tracker API",
         default_version='v1',
-        description="API documentation for your budget tracker project",
-        contact=openapi.Contact(email="your-email@example.com"),
+        description="API documentation for budget tracker project",
+        contact=openapi.Contact(email="junaids.khan23@gmail.com"),
     ),
     public=True,
     permission_classes=[permissions.AllowAny],
