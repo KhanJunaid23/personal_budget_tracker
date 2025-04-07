@@ -146,7 +146,7 @@ const TransactionList = ({transactions,onEdit,onDelete,onPageChange,currentPage,
             <tr key={transaction.id}>
               <td>₹{transaction.amount}</td>
               <td>{transaction.category.name}</td>
-              <td>{transaction.description}</td>
+              <td>{transaction.detail}</td>
               <td>{new Date(transaction.date).toLocaleDateString()}</td>
               <td>
                 <span
